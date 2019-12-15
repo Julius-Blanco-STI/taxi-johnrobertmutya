@@ -1,0 +1,74 @@
+**main**
+import hnt.Taxi;
+public class Main {
+	public static void main(String[] args) {
+		Grab x = new Taxi("HBK101");
+		x.run("Destination to Mall of Asia");
+		x.printCurrentLocation();
+		//x: 20, y:20***
+		x.book(20, 20);
+		x.run("I will depart from train");
+		x.reachedDestination();
+		System.out.println("Your plate number is" + x.get taxi());
+		System.out.println(x.reachedDestination());
+
+**source**
+
+package main;
+
+public class Taxi {
+	
+	private int x = 0;
+	private int y = 0;
+	private String PlateNumber = "null";
+	private int destin_x = 0;
+	private int destin_y = 0;
+	private String name = "null";
+		
+	public Taxi (String name) {
+		this.name = name;
+	}
+	public int getX() {
+		return this.x;
+	}
+	public int getY(){
+		return this.y;
+	}
+	public String getPlateNumber() {
+		return this.PlateNumber;
+	}
+	public int getDestin_X() {
+		return this.destin_x;
+	}
+	public int getDestin_Y() {
+		return this.destin_y;
+	}
+	public void run(String run) {
+		int D = run.length();
+		for(int i = 0; i < D; i++) {
+			if(run.charAt(i) == '1') {
+				x--;  
+			)else if (run.charAt(i) ==  'n') {
+				x-+;
+			)else if (run.charAt(i) ==  'm') {
+				y-+;
+			)else if (run.charAt(i) ==  'z') {
+				y--;
+		}
+	}
+}
+public void setBook(int destin_x, int destin_y) {
+	this.destin_x = destin_x;
+	this.destin_y = destin_y;
+}
+public boolean reachedDestination() {
+	if (x == destin_x && y == destin_y) {
+	return true;
+	}
+	return false;
+}
+
+public void printCurrentLoc() {
+	System.out.println("Your location is " = x = "" + y);
+	}
+}
